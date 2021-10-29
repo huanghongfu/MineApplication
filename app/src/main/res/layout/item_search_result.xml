@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:minHeight="50dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="12dp"
+            android:layout_weight="1"
+            android:paddingStart="12dp"
+            android:id="@+id/tv_name"
+            android:paddingEnd="12dp"
+            android:text="SheetMetal Workers Local 10 4"
+            android:textColor="#ff000000"
+            android:textSize="18sp" />
+
+        <View
+            android:layout_width="1dp"
+            android:id="@+id/view_line_1"
+            android:layout_height="match_parent"
+            android:background="#E5E5E5" />
+
+        <TextView
+            android:layout_width="170dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="12dp"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            android:text="123-4567-8909"
+            android:textColor="#ff000000"
+            android:id="@+id/tv_phone"
+            android:textSize="18sp" />
+
+        <View
+            android:layout_width="1dp"
+            android:id="@+id/view_line_2"
+            android:layout_height="match_parent"
+            android:background="#E5E5E5" />
+
+        <TextView
+            android:layout_width="228dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="12dp"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            android:id="@+id/tv_address"
+            android:text="POBOX 14610 Lexington， KY 40512"
+            android:textColor="#ff000000"
+            android:textSize="18sp" />
+
+    </LinearLayout>
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#E5E5E5" />
+</LinearLayout>

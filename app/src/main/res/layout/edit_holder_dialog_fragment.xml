@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:paddingBottom="50dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:text="@string/string_cancel"
+                android:id="@+id/tv_cancel"
+                android:textColor="#ff1789fc"
+                android:textSize="18sp" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="EDIT POLICYHOLDER"
+                android:textColor="#ff000000"
+                android:textSize="18sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:text="@string/string_complete"
+                android:id="@+id/tv_complete"
+                android:textColor="#ff1789fc"
+                android:textSize="18sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:orientation="horizontal">
+
+            <com.hhf.project.widght.CommonTableView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:common_editable="true"
+                android:id="@+id/common_view_last_name"
+                app:common_show_must="true"
+                app:common_title_hint="LAST NAME" />
+
+            <com.hhf.project.widght.CommonTableView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:common_editable="true"
+                android:id="@+id/common_view_first_name"
+                app:common_show_must="true"
+                app:common_title_hint="FIRST NAME" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/common_top_margin"
+            android:orientation="horizontal">
+
+            <com.hhf.project.widght.CommonTableView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:common_right_icon="@drawable/icon_arrow_right"
+                app:common_editable="false"
+                app:common_show_must="true"
+                android:id="@+id/common_view_gender"
+                app:common_title_hint="GENDER" />
+
+            <com.hhf.project.widght.CommonTableView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:id="@+id/common_view_ssn"
+                app:common_editable="true"
+                app:common_show_must="false"
+                app:common_title_hint="SNN" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/common_top_margin"
+            android:orientation="horizontal">
+
+            <com.hhf.project.widght.CommonTableView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:common_editable="false"
+                app:common_right_icon="@drawable/icon_calendar"
+                app:common_show_must="true"
+                android:id="@+id/common_view_dob"
+                app:common_title_hint="DOB" />
+
+            <com.hhf.project.widght.CommonTableView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:common_editable="true"
+                app:common_show_must="true"
+                android:id="@+id/common_view_phone"
+                app:common_title_hint="PHONE" />
+        </LinearLayout>
+
+        <com.hhf.project.widght.CommonTableView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/common_top_margin"
+            android:layout_weight="1"
+            android:id="@+id/common_view_address"
+            app:common_editable="true"
+            app:common_show_must="true"
+            app:common_title_hint="ADDRESS" />
+
+        <com.hhf.project.widght.CommonTableView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/common_top_margin"
+            android:layout_weight="1"
+            app:common_editable="true"
+            android:id="@+id/common_view_city"
+            app:common_show_must="true"
+            app:common_title_hint="CITY" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/common_top_margin"
+            android:orientation="horizontal">
+
+            <com.hhf.project.widght.CommonTableView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:common_editable="false"
+                app:common_right_icon="@drawable/icon_arrow_right"
+                app:common_show_must="true"
+                android:id="@+id/common_view_status"
+                app:common_title_hint="STATE" />
+
+            <com.hhf.project.widght.CommonTableView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:common_editable="true"
+                app:common_show_must="true"
+                android:id="@+id/common_view_zip"
+                app:common_title_hint="ZIP" />
+        </LinearLayout>
+    </LinearLayout>
+</layout>

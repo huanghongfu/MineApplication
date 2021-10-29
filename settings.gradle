@@ -1,0 +1,5 @@
+include ':wrapperBase'
+include ':libRes'
+include ':libBase'
+include ':app'
+rootProject.name = "MineApplication"

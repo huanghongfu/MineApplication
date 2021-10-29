@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="CommonTableView">
+<!--        标题-->
+        <attr name="common_title_hint" format="string" />
+<!--        是否显示必选项-->
+        <attr name="common_show_must" format="boolean" />
+<!--        是否可编辑-->
+        <attr name="common_editable" format="boolean" />
+<!--        是否是使用通用背景-->
+        <attr name="common_use_content_white_bg" format="boolean" />
+<!--        右边图标-->
+        <attr name="common_right_icon" format="reference" />
+
+
+    </declare-styleable>
+
+</resources>

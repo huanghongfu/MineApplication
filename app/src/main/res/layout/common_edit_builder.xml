@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:background="@drawable/common_selector_rect_bg"
+        android:orientation="vertical"
+        android:padding="32dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="INSURANCE"
+                android:textColor="#ff000000"
+                android:textSize="24sp" />
+
+            <FrameLayout
+                android:layout_width="206dp"
+                android:layout_height="34dp"
+                android:layout_alignParentEnd="true"
+                android:id="@+id/fl_go_builder"
+                android:background="@drawable/selector_btn_add_builder">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="34dp"
+                    android:drawableStart="@drawable/icon_white_add"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:text="ADD BILLING"
+                    android:drawablePadding="10dp"
+                    android:textColor="#ffffffff"
+                    android:textSize="12sp" />
+            </FrameLayout>
+
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/common_top_margin"
+            android:orientation="horizontal">
+
+            <com.hhf.project.widght.CommonTableView
+                app:common_editable="false"
+                app:common_right_icon="@drawable/icon_arrow_right"
+                app:common_show_must="false"
+                app:common_title_hint="NAME"
+                app:common_use_content_white_bg="false"
+                android:layout_width="0dp"
+                android:id="@+id/common_view_name"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <com.hhf.project.widght.CommonTableView
+                app:common_editable="false"
+                app:common_right_icon="@drawable/icon_arrow_right"
+                app:common_show_must="false"
+                app:common_title_hint="PAYER CLASS"
+                app:common_use_content_white_bg="false"
+                android:layout_width="0dp"
+                android:id="@+id/common_view_payer_class"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+        </LinearLayout>
+
+        <com.hhf.project.widght.CommonTableView
+            app:common_editable="true"
+            app:common_show_must="false"
+            app:common_title_hint="ADDRESS"
+            app:common_use_content_white_bg="false"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/common_top_margin"
+            android:id="@+id/common_view_address"
+            android:layout_weight="1" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/common_top_margin"
+            android:orientation="horizontal">
+
+            <com.hhf.project.widght.CommonTableView
+                app:common_editable="false"
+                app:common_right_icon="@drawable/icon_arrow_right"
+                app:common_show_must="true"
+                app:common_title_hint="LEVEL"
+                app:common_use_content_white_bg="false"
+                android:layout_width="0dp"
+                android:id="@+id/common_view_level"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <com.hhf.project.widght.CommonTableView
+                app:common_editable="true"
+                app:common_show_must="true"
+                app:common_title_hint="MEMBER ID"
+                app:common_use_content_white_bg="false"
+                android:layout_width="0dp"
+                android:id="@+id/common_view_member_id"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/common_top_margin"
+            android:orientation="horizontal">
+
+            <com.hhf.project.widght.CommonTableView
+                app:common_editable="true"
+                app:common_show_must="false"
+                app:common_title_hint="GROUP"
+                app:common_use_content_white_bg="false"
+                android:layout_width="0dp"
+                android:id="@+id/common_view_group"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <com.hhf.project.widght.CommonTableView
+                android:id="@+id/common_view_policy_holder"
+                app:common_editable="false"
+                app:common_right_icon="@drawable/icon_arrow_right"
+                app:common_show_must="true"
+                app:common_title_hint="POLICY HOLDER"
+                app:common_use_content_white_bg="false"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/common_top_margin"
+            android:orientation="horizontal">
+
+            <com.hhf.project.widght.CommonTableView
+                app:common_editable="false"
+                app:common_right_icon="@drawable/icon_calendar"
+                app:common_show_must="false"
+                app:common_title_hint="EFFECTIVE DATE"
+                app:common_use_content_white_bg="false"
+                android:layout_width="0dp"
+                android:id="@+id/common_view_effective_date"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <com.hhf.project.widght.CommonTableView
+                app:common_editable="false"
+                app:common_right_icon="@drawable/icon_calendar"
+                app:common_show_must="false"
+                app:common_title_hint="TERM DATE"
+                app:common_use_content_white_bg="false"
+                android:layout_width="0dp"
+                android:id="@+id/common_view_term_date"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_height="160dp"
+                android:layout_marginTop="@dimen/common_top_margin"
+                android:layout_weight="1"
+                android:background="@drawable/common_selector_rect_bg_white">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="INSURANCE FRONT"
+                    android:textColor="#ff000000"
+                    android:textSize="18sp" />
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:scaleType="centerCrop"
+                    android:id="@+id/iv_image_front"
+                    android:layout_height="match_parent" />
+
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_height="160dp"
+                android:layout_marginStart="48dp"
+                android:layout_marginTop="@dimen/common_top_margin"
+                android:layout_weight="1"
+                android:background="@drawable/common_selector_rect_bg_white">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="INSURANCE BACK"
+                    android:textColor="#ff000000"
+                    android:textSize="18sp" />
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:id="@+id/iv_image_back"
+                    android:scaleType="centerCrop"
+                    android:layout_height="match_parent" />
+            </FrameLayout>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
