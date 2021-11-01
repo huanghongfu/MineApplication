@@ -10,5 +10,5 @@ data class EditHolderInfoBean (
     var mPayClassIndex:Int=0,
     var mPolicyIndex:Int=0,
     var backPath:String="",
-    var frontPath:String="",
+    var frontPath:String=""
 )

@@ -52,12 +52,19 @@
                     android:textSize="18sp" />
             </RadioGroup>
 
-            <androidx.recyclerview.widget.RecyclerView
+            <androidx.core.widget.NestedScrollView
                 android:layout_width="match_parent"
-                android:id="@+id/recycler_view"
-                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                tools:listitem="@layout/common_edit_builder"
-                android:layout_height="match_parent"/>
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="vertical"
+                    android:id="@+id/ll_add_builder_container"
+                    android:layout_height="wrap_content">
+
+                </LinearLayout>
+
+            </androidx.core.widget.NestedScrollView>
         </LinearLayout>
     </LinearLayout>
 </layout>

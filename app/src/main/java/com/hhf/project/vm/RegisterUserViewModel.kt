@@ -32,7 +32,7 @@ class RegisterUserViewModel : BaseViewModel() {
     val createHolderLiveData = MutableLiveData<ResultState<CreateHolderBean>>()
     val uploadLiveData = MutableLiveData<UploadInfoBean>()
     val updateInfoLiveData = MutableLiveData<ResultState<ApiResponse<String>>>()
-    val getDoctorListLiveData = MutableLiveData<ResultState<MutableList<DoctorInfoBean>>>()
+    val getDoctorListLiveData = MutableLiveData<ResultState<ApiResponse<MutableList<DoctorInfoBean>>>>()
     val createOrderLiveData = MutableLiveData<ResultState<Any>>()
 
     fun registerUser(
@@ -82,29 +82,30 @@ class RegisterUserViewModel : BaseViewModel() {
         }
 
         mutableMapOf.wrapperMap()
-        request({ apiService.register(mutableMapOf) }, registerUserLiveData,true)
+        request({ apiService.register(mutableMapOf) }, registerUserLiveData, true)
     }
 
     fun getDoctorList() {
         val mutableMapOf = mutableMapOf<String, String>()
         mutableMapOf.wrapperMap()
-        request({ apiService.getDoctorList(mutableMapOf) }, getDoctorListLiveData)
+        requestNoCheck({ apiService.getDoctorList(mutableMapOf) }, getDoctorListLiveData)
     }
 
-    fun createOrder(bean:DoctorInfoBean) {
+    fun createOrder(bean: DoctorInfoBean) {
         val mutableMapOf = mutableMapOf<String, String>()
-        mutableMapOf["appointmentVO.patientId"]=MineApp.userid
-        mutableMapOf["appointmentVO.doctorId"]=bean.id
-        mutableMapOf["appointmentVO.startHour"]=bean.canAppointmentTime[bean.subIndex].startHour
-        mutableMapOf["appointmentVO.startMinute"]=bean.canAppointmentTime[bean.subIndex].startMinute
-        mutableMapOf["appointmentVO.endHour"]=bean.canAppointmentTime[bean.subIndex].endHour
-        mutableMapOf["appointmentVO.endMinute"]=bean.canAppointmentTime[bean.subIndex].endMinute
+        mutableMapOf["appointmentVO.patientId"] = MineApp.userid
+        mutableMapOf["appointmentVO.doctorId"] = bean.id
+        mutableMapOf["appointmentVO.startHour"] = bean.canAppointmentTime[bean.subIndex].startHour
+        mutableMapOf["appointmentVO.startMinute"] =
+            bean.canAppointmentTime[bean.subIndex].startMinute
+        mutableMapOf["appointmentVO.endHour"] = bean.canAppointmentTime[bean.subIndex].endHour
+        mutableMapOf["appointmentVO.endMinute"] = bean.canAppointmentTime[bean.subIndex].endMinute
         mutableMapOf.wrapperMap()
         requestNoCheck({ apiService.createOrder(mutableMapOf) }, {
-            if(!TextUtils.isEmpty(it.msg)){
+            if (!TextUtils.isEmpty(it.msg)) {
                 ToastUtils.showShort(it.msg)
             }
-        },isShowDialog = true)
+        }, isShowDialog = true)
     }
 
     fun getPollDownData() {
@@ -113,7 +114,7 @@ class RegisterUserViewModel : BaseViewModel() {
         request({ apiService.getPollDownData(mutableMapOf) }, getPollDownLiveData)
     }
 
-    fun updateInfo(editHolderData: List<Map<String, String>>,payWay:Boolean) {
+    fun updateInfo(editHolderData: List<Map<String, String>>, payWay: Boolean) {
         val mutableMapOf = IdentityHashMap<String, String>()
         mutableMapOf["patientInfo.p_id"] = MineApp.userid
         mutableMapOf["patientInfo.payWay"] = if (payWay) {
@@ -125,21 +126,25 @@ class RegisterUserViewModel : BaseViewModel() {
             mutableMapOf.putAll(it)
         }
         mutableMapOf.wrapperMap()
-        requestNoCheck({ apiService.updateInfo(mutableMapOf) }, updateInfoLiveData,isShowDialog = true)
+        requestNoCheck(
+            { apiService.updateInfo(mutableMapOf) },
+            updateInfoLiveData,
+            isShowDialog = true
+        )
     }
 
-    fun uploadImage(file: File,isFront:Boolean,item: EditHolderInfoBean) {
+    fun uploadImage(file: File, isFront: Boolean, item: EditHolderInfoBean) {
         requestNoCheck({
             val mutableListOf = mutableListOf<MultipartBody.Part>()
             mutableListOf.add(toMultipartBodyOfText("deviceNum", DeviceUtils.getUniqueDeviceId()))
             mutableListOf.add(toMultipartBody("filePath", file))
             apiService.uploadImage(mutableListOf)
         }, {
-            if(it.isSuccess()){
-                if(isFront){
-                    item.frontPath=it.result
-                }else{
-                    item.backPath=it.result
+            if (it.isSuccess()) {
+                if (isFront) {
+                    item.frontPath = it.result
+                } else {
+                    item.backPath = it.result
                 }
             }
         })

@@ -3,8 +3,10 @@ package com.hhf.project.ui
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.text.TextUtils
 import android.view.View
 import com.aigestudio.wheelpicker.WheelPicker
+import com.blankj.utilcode.util.ToastUtils
 import com.chad.library.adapter.base.BaseQuickAdapter
 import com.hhf.project.R
 import com.hhf.project.adapter.DoctorAdapter
@@ -38,7 +40,13 @@ class DoctorSelectActivity : BaseActivity<RegisterUserViewModel, ActivityDoctorS
         super.createObserver()
         mViewModel.getDoctorListLiveData.observe(this, {
             parseState(it, {
-                mAdapter.setNewInstance(it)
+                if(it.isSuccess()){
+                    if(TextUtils.equals(it.getErrorCode(),"NO_DOCTOR")){
+                        ToastUtils.showShort(it.getResponseMsg())
+                    }else{
+                        mAdapter.setNewInstance(it.result)
+                    }
+                }
             })
         })
 
