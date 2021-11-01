@@ -62,6 +62,7 @@ class EditHolderFragment : BaseFragment<RegisterUserViewModel, FragmentEditHolde
     }
 
 
+
     override fun initView(savedInstanceState: Bundle?) {
         mData= mutableListOf()
         mDatabind.rgGroup.setOnCheckedChangeListener { _, i ->
