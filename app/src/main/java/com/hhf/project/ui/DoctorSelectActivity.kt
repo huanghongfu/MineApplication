@@ -81,7 +81,7 @@ class DoctorSelectActivity : BaseActivity<RegisterUserViewModel, ActivityDoctorS
                         .show(supportFragmentManager,"")
                 }
                 R.id.tv_select->{
-                    mViewModel.createOrder(item,mDatabind.tvTitle.text.toString())
+                    mViewModel.createOrder(item)
                 }
             }
         }

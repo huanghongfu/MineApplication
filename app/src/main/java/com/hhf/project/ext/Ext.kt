@@ -67,6 +67,7 @@ fun selectGender(context: Context, commonView: CommonTableView) {
 fun MutableMap<String, String>.wrapperMap() {
     this["deviceNum"] = com.blankj.utilcode.util.DeviceUtils.getUniqueDeviceId()
     this["clinicId"] = SPUtils.getInstance().getString(GlobalConstants.CLIENT_ID)
+    this["appDate"] = getCurrentDate()
 }
 
 fun getCurrentDate(): String {
