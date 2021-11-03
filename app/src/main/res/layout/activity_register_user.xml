@@ -153,7 +153,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         app:common_editable="true"
-                        app:common_show_must="false"
+                        app:common_show_must="true"
                         android:id="@+id/common_view_address"
                         app:common_title_hint="ADDRESS" />
 

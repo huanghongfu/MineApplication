@@ -11,6 +11,7 @@ import com.chad.library.adapter.base.BaseQuickAdapter
 import com.hhf.project.R
 import com.hhf.project.adapter.DoctorAdapter
 import com.hhf.project.databinding.ActivityDoctorSelectBinding
+import com.hhf.project.ext.getCurrentDate
 import com.hhf.project.vm.RegisterUserViewModel
 import me.hgj.jetpackmvvm.base.viewmodel.BaseViewModel
 import me.hgj.jetpackmvvm.demo.app.base.BaseActivity
@@ -58,6 +59,8 @@ class DoctorSelectActivity : BaseActivity<RegisterUserViewModel, ActivityDoctorS
         mDatabind.ivBack.setOnClickListener {
             finish()
         }
+
+        mDatabind.tvTitle.text = getCurrentDate()
         mViewModel.getDoctorList()
     }
 
@@ -78,7 +81,7 @@ class DoctorSelectActivity : BaseActivity<RegisterUserViewModel, ActivityDoctorS
                         .show(supportFragmentManager,"")
                 }
                 R.id.tv_select->{
-                    mViewModel.createOrder(item)
+                    mViewModel.createOrder(item,mDatabind.tvTitle.text.toString())
                 }
             }
         }

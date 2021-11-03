@@ -91,7 +91,7 @@ class RegisterUserViewModel : BaseViewModel() {
         requestNoCheck({ apiService.getDoctorList(mutableMapOf) }, getDoctorListLiveData)
     }
 
-    fun createOrder(bean: DoctorInfoBean) {
+    fun createOrder(bean: DoctorInfoBean,date:String) {
         val mutableMapOf = mutableMapOf<String, String>()
         mutableMapOf["appointmentVO.patientId"] = MineApp.userid
         mutableMapOf["appointmentVO.doctorId"] = bean.id
@@ -100,6 +100,7 @@ class RegisterUserViewModel : BaseViewModel() {
             bean.canAppointmentTime[bean.subIndex].startMinute
         mutableMapOf["appointmentVO.endHour"] = bean.canAppointmentTime[bean.subIndex].endHour
         mutableMapOf["appointmentVO.endMinute"] = bean.canAppointmentTime[bean.subIndex].endMinute
+        mutableMapOf["appointmentVO.appDate"] = date
         mutableMapOf.wrapperMap()
         requestNoCheck({ apiService.createOrder(mutableMapOf) }, {
             if (!TextUtils.isEmpty(it.msg)) {

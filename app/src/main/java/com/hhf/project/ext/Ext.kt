@@ -3,13 +3,12 @@ package com.hhf.project.ext
 import android.app.AlertDialog
 import android.app.DatePickerDialog
 import android.content.Context
-import android.content.DialogInterface
 import android.text.TextUtils
 import com.blankj.utilcode.util.SPUtils
-import com.blankj.utilcode.util.TimeUtils
 import com.hhf.project.bean.StatusListBean
 import com.hhf.project.constant.GlobalConstants
 import com.hhf.project.widght.CommonTableView
+import java.text.SimpleDateFormat
 import java.util.*
 
 /**
@@ -70,16 +69,24 @@ fun MutableMap<String, String>.wrapperMap() {
     this["clinicId"] = SPUtils.getInstance().getString(GlobalConstants.CLIENT_ID)
 }
 
+fun getCurrentDate(): String {
+    val sdf = SimpleDateFormat("MM/dd/yyyy")
+    return sdf.format(Date())
+}
 
 fun getPayClassList(): List<StatusListBean> {
     return mutableListOf(
-        StatusListBean("", "None"),
-        StatusListBean("3", "Medicare"),
-        StatusListBean("1", "Other"),
-        StatusListBean("2", "Commercial")
+        StatusListBean("3", "Other"),
+        StatusListBean("0", "Medicare"),
+        StatusListBean("1", "Medicaid"),
+        StatusListBean("2", "Commercial"),
+        StatusListBean("4", "Medicare managed care"),
+        StatusListBean("5", "Medicaid managed care"),
+        StatusListBean("6", "CHAMPUS/CHAMPVA"),
+        StatusListBean("7", "Workers compensation"),
+        StatusListBean("8", "Auto-accident"),
     )
 }
-
 
 fun getLevelList(): List<StatusListBean> {
     return mutableListOf(
@@ -91,11 +98,11 @@ fun getLevelList(): List<StatusListBean> {
 
 fun getPolicyHolderList(): List<StatusListBean> {
     return mutableListOf(
-        StatusListBean("1", "self"),
-        StatusListBean("2", "spouse"),
-        StatusListBean("3", "child"),
-        StatusListBean("5", "mather"),
-        StatusListBean("6", "father"),
-        StatusListBean("4", "other ")
+        StatusListBean("1", "Self"),
+        StatusListBean("2", "Spouse"),
+        StatusListBean("3", "Child"),
+        StatusListBean("5", "Parent"),
+        StatusListBean("6", "Relative"),
+        StatusListBean("4", "Other")
     )
 }

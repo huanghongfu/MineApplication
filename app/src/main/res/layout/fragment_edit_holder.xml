@@ -34,7 +34,7 @@
                     android:checked="true"
                     android:id="@+id/rb_insurancee_pay"
                     android:gravity="center"
-                    android:text="INSURANCEE PAY"
+                    android:text="INSURANCE PAY"
                     android:textColor="@drawable/selector_btn_checked_status_text_color"
                     android:textSize="18sp" />
 

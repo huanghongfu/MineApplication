@@ -37,7 +37,7 @@
                     android:drawableStart="@drawable/icon_white_add"
                     android:gravity="center"
                     android:layout_gravity="center"
-                    android:text="ADD BILLING"
+                    android:text="ADD INSURANCE"
                     android:drawablePadding="10dp"
                     android:textColor="#ffffffff"
                     android:textSize="12sp" />
@@ -186,7 +186,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="INSURANCE FRONT"
+                    android:text="Front of insurance card"
                     android:textColor="#ff000000"
                     android:textSize="18sp" />
 
@@ -211,7 +211,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="INSURANCE BACK"
+                    android:text="Back of insurance card"
                     android:textColor="#ff000000"
                     android:textSize="18sp" />
 
