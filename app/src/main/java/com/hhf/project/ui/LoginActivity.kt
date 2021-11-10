@@ -9,6 +9,7 @@ import com.hhf.project.MineApp
 import com.hhf.project.R
 import com.hhf.project.constant.GlobalConstants
 import com.hhf.project.databinding.ActivityLoginBinding
+import com.hhf.project.ext.genderArray
 import com.hhf.project.ext.selectDate
 import com.hhf.project.ext.selectGender
 import com.hhf.project.vm.LoginViewModel
@@ -54,6 +55,9 @@ class LoginActivity : BaseActivity<LoginViewModel, ActivityLoginBinding>() {
         if(TextUtils.isEmpty(SPUtils.getInstance().getString(GlobalConstants.CLIENT_ID))){
             InputClientIdDialogFragment.newInstance().show(supportFragmentManager,"")
         }
+
+        mDatabind.commonViewGender.setText(genderArray[0])
+        mDatabind.commonViewGender.setExtField("0")
     }
 
     override fun createObserver() {

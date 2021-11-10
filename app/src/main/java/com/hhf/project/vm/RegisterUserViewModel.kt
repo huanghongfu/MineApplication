@@ -2,7 +2,6 @@ package com.hhf.project.vm
 
 import android.text.TextUtils
 import androidx.lifecycle.MutableLiveData
-import com.blankj.utilcode.util.ApiUtils
 import com.blankj.utilcode.util.DeviceUtils
 import com.blankj.utilcode.util.ToastUtils
 import com.hhf.project.MineApp
@@ -38,7 +37,7 @@ class RegisterUserViewModel : BaseViewModel() {
     fun registerUser(
         lastName: String,
         firstName: String,
-        mi: String,
+        middleName: String,
         gender: String,
         strdob: String,
         email: String,
@@ -55,10 +54,34 @@ class RegisterUserViewModel : BaseViewModel() {
         g_home_phone: String,
         content: List<Map<String, String>>
     ) {
+        if (TextUtils.isEmpty(lastName)) {
+            ToastUtils.showShort("Please enter your lastName")
+            return
+        }
+        if (TextUtils.isEmpty(firstName)) {
+            ToastUtils.showShort("Please enter your firstName")
+            return
+        }
+        if (TextUtils.isEmpty(gender)) {
+            ToastUtils.showShort("Please enter your gender")
+            return
+        }
+        if (TextUtils.isEmpty(g_addr)) {
+            ToastUtils.showShort("Please enter your address")
+            return
+        }
+        if (TextUtils.isEmpty(g_city)) {
+            ToastUtils.showShort("Please enter your city")
+            return
+        }
+        if (TextUtils.isEmpty(g_zipCode)) {
+            ToastUtils.showShort("Please enter your zip")
+            return
+        }
         val mutableMapOf = IdentityHashMap<String, String>()
         mutableMapOf["patientInfo.lastName"] = lastName
         mutableMapOf["patientInfo.firstName"] = firstName
-        mutableMapOf["patientInfo.mi"] = mi
+        mutableMapOf["patientInfo.mi"] = middleName
         mutableMapOf["patientInfo.gender"] = gender
         mutableMapOf["patientInfo.ssn"] = ssn
         mutableMapOf["patientInfo.title.id"] = title
@@ -71,6 +94,8 @@ class RegisterUserViewModel : BaseViewModel() {
         } else {
             "SELF"
         }
+
+
         mutableMapOf["patientInfo.g_addr"] = g_addr
         mutableMapOf["patientInfo.g_city"] = g_city
         mutableMapOf["patientInfo.g_state.id"] = g_state

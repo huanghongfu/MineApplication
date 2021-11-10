@@ -39,6 +39,7 @@ import me.hgj.jetpackmvvm.ext.getViewModel
 import me.hgj.jetpackmvvm.ext.parseState
 import me.hgj.jetpackmvvm.util.image.GlideEngine
 import java.io.File
+import java.lang.Exception
 
 /**
  *  @date 2021/10/23
@@ -293,7 +294,6 @@ class EditHolderFragment : BaseFragment<RegisterUserViewModel, FragmentEditHolde
 
             mutableMapOf[String(StringBuffer("groupNumbers"))] =
                 childAt.findViewById<CommonTableView>(R.id.common_view_group).getText()
-
 
             mutableMapOf[String(StringBuffer("effective_dates"))] =
                 childAt.findViewById<CommonTableView>(R.id.common_view_effective_date).getText()

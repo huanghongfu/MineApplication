@@ -4,20 +4,15 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.text.TextUtils
-import android.view.View
-import androidx.lifecycle.Observer
 import com.aigestudio.wheelpicker.WheelPicker
 import com.blankj.utilcode.util.ActivityUtils
-import com.blankj.utilcode.util.ToastUtils
 import com.hhf.project.MineApp
 import com.hhf.project.R
 import com.hhf.project.bean.PollDataBean
-import com.hhf.project.bean.SearchItemBean
 import com.hhf.project.databinding.ActivityRegisterUserBinding
 import com.hhf.project.ext.*
 import com.hhf.project.vm.RegisterUserViewModel
 import com.hhf.project.widght.CommonTableView
-import kotlinx.android.synthetic.main.common_edit_builder.view.*
 import me.hgj.jetpackmvvm.demo.app.base.BaseActivity
 import me.hgj.jetpackmvvm.ext.parseState
 import me.hgj.jetpackmvvm.ext.view.clickNoRepeat
@@ -249,7 +244,7 @@ class RegisterUserActivity : BaseActivity<RegisterUserViewModel, ActivityRegiste
             mViewModel.registerUser(
                 lastName = mDatabind.commonViewLastName.getText(),
                 firstName = mDatabind.commonViewFirstName.getText(),
-                mi = mDatabind.commonViewMiddleName.getText(),
+                middleName = mDatabind.commonViewMiddleName.getText(),
                 gender = mDatabind.commonViewGender.getExtField(),
                 strdob = mDatabind.commonViewDob.getText(),
                 email = mDatabind.commonViewEmail.getText(),

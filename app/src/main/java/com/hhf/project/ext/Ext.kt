@@ -17,22 +17,23 @@ import java.util.*
  *  @action
  */
 
-val genderArray = arrayOf("male", "female")
+val genderArray = arrayOf("Male", "Female")
 
 fun selectDate(context: Context, commonView: CommonTableView) {
     val calendar: Calendar = Calendar.getInstance() //获取日期格式器对象
 
     val datePickerDialog = DatePickerDialog(
         context, { _, p1, p2, p3 ->
+            val mouth=p2+1
             commonView.setText(
                 "${
-                    if (p2 >= 10) {
-                        p2.toString()
+                    if (mouth >= 10) {
+                        mouth.toString()
                     } else {
-                        "0".plus(p2)
+                        "0".plus(mouth)
                     }
                 }/${
-                    if (p3 > 10) {
+                    if (p3 >= 10) {
                         p3.toString()
                     } else {
                         "0".plus(p3)
