@@ -176,9 +176,9 @@ class RegisterUserActivity : BaseActivity<RegisterUserViewModel, ActivityRegiste
 
         mDatabind.ivBack.setOnClickListener { finish() }
 
-        mDatabind.commonViewDob.setOnClickListener {
-            selectDate(this, mDatabind.commonViewDob)
-        }
+//        mDatabind.commonViewDob.setOnClickListener {
+//            selectDate(this, mDatabind.commonViewDob)
+//        }
 
         mDatabind.commonViewTitle.setOnClickListener {
             mPollDataBean?.let {
