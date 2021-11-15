@@ -76,7 +76,7 @@
         </LinearLayout>
 
         <com.hhf.project.widght.CommonTableView
-            app:common_editable="true"
+            app:common_editable="false"
             app:common_show_must="false"
             app:common_title_hint="ADDRESS"
             app:common_use_content_white_bg="false"

@@ -181,6 +181,8 @@ class EditHolderFragment : BaseFragment<RegisterUserViewModel, FragmentEditHolde
                     override fun onSelect(bean: SearchItemBean) {
                         (view as CommonTableView).setText(bean.name)
                         (view as CommonTableView).setExtField(bean.id)
+
+                        inflate.findViewById<CommonTableView>(R.id.common_view_address).setText(bean.addr)
                     }
                 })
                 .show(childFragmentManager, "")
