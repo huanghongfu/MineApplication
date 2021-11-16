@@ -1,6 +1,9 @@
 package com.hhf.project.ui
 
+import android.content.Context
+import android.content.Intent
 import android.os.Bundle
+import android.os.CountDownTimer
 import android.text.TextUtils
 import android.view.View
 import com.blankj.utilcode.util.SPUtils
@@ -23,9 +26,28 @@ import me.hgj.jetpackmvvm.ext.view.clickNoRepeat
  *  @action
  */
 class LoginActivity : BaseActivity<LoginViewModel, ActivityLoginBinding>() {
+
+    companion object{
+        @JvmStatic
+        fun start(context: Context) {
+            val starter = Intent(context, LoginActivity::class.java)
+            context.startActivity(starter)
+        }
+    }
     override fun layoutId() = R.layout.activity_login
 
     override fun initView(savedInstanceState: Bundle?) {
+//        object: CountDownTimer(3000,1000){
+//            override fun onTick(millisUntilFinished: Long) {
+//
+//            }
+//
+//            override fun onFinish() {
+//                SplashActivity.start(this@LoginActivity)
+//                finish()
+//            }
+//
+//        }.start()
 
         mDatabind.commonViewDob.setOnClickListener {
             selectDate(this, mDatabind.commonViewDob)

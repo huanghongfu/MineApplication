@@ -59,7 +59,7 @@ abstract class BaseVmActivity<VM : BaseViewModel> : AppCompatActivity() {
         })
     }
 
-    private fun initSystemBar() {
+    open fun initSystemBar() {
         immersionBar {
             statusBarDarkFont(true)
             fitsSystemWindows(true)

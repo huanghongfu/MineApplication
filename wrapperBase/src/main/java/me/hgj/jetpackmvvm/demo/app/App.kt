@@ -2,6 +2,7 @@ package me.hgj.jetpackmvvm.demo.app
 
 import android.view.Gravity
 import androidx.multidex.MultiDex
+import com.blankj.utilcode.util.SPUtils
 import com.blankj.utilcode.util.ToastUtils
 import com.blankj.utilcode.util.Utils
 import com.kingja.loadsir.callback.SuccessCallback
@@ -24,6 +25,7 @@ open class App : BaseApp() {
 
     companion object {
         lateinit var instance: App
+        var stayTime: Int = 0
     }
 
     override fun onCreate() {

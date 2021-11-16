@@ -12,5 +12,6 @@ data class InputClientBean(
     val city: String,
     val name: String,
     val npi: String,
+    val screenSaverTimer: Int,
     val phone: String
 ):Serializable

@@ -7,4 +7,5 @@ package com.hhf.project.constant
  */
 object GlobalConstants {
     var CLIENT_ID="CLIENT_ID"
+    var SERVICE_TIME="SERVICE_TIME"
 }

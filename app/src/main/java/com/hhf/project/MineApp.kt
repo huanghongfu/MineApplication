@@ -8,8 +8,9 @@ import me.hgj.jetpackmvvm.demo.app.App
  *  @action
  */
 
-class MineApp : App(){
-    companion object{
-        var userid:String=""
+class MineApp : App() {
+    companion object {
+        var userid: String = ""
+
     }
 }

@@ -48,7 +48,7 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
     api 'com.android.support:multidex:1.0.3'
-    debugImplementation 'com.squareup.leakcanary:leakcanary-android:2.4'
+//    debugImplementation 'com.squareup.leakcanary:leakcanary-android:2.4'
     //androidx UI
     api 'androidx.appcompat:appcompat:1.2.0'
     api 'androidx.constraintlayout:constraintlayout:2.0.4'

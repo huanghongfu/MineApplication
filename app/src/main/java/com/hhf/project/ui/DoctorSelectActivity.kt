@@ -5,6 +5,8 @@ import android.content.Intent
 import android.os.Bundle
 import android.text.TextUtils
 import android.view.View
+import androidx.core.view.isVisible
+import androidx.lifecycle.Observer
 import com.aigestudio.wheelpicker.WheelPicker
 import com.blankj.utilcode.util.ToastUtils
 import com.chad.library.adapter.base.BaseQuickAdapter
@@ -51,12 +53,22 @@ class DoctorSelectActivity : BaseActivity<RegisterUserViewModel, ActivityDoctorS
             })
         })
 
-        mViewModel.createOrderLiveData
+        mViewModel.createOrderLiveData.observe(this, Observer {
+            parseState(it,{
+                mDatabind.tvFinish.isVisible=true
+            })
+        })
     }
 
     override fun initView(savedInstanceState: Bundle?) {
         initRecyclerView()
         mDatabind.ivBack.setOnClickListener {
+            finish()
+        }
+
+        mDatabind.tvFinish.setOnClickListener {
+            ToastUtils.showLong("Thank you! Your registration has been completed.")
+            LoginActivity.start(this)
             finish()
         }
 
