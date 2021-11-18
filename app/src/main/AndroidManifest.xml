@@ -36,7 +36,6 @@
         </activity>
         <activity
             android:name=".ui.SplashActivity"
-            android:launchMode="singleTask"
             android:theme="@style/FullscreenThemse"
             android:screenOrientation="portrait" >
 

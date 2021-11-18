@@ -41,6 +41,7 @@ class SplashActivity : BaseActivity<BaseViewModel, ActivitySplashBinding>() {
 //
 //        }.start()
         App.stayTime = SPUtils.getInstance().getInt(GlobalConstants.SERVICE_TIME)
+//        App.stayTime = 10
         mDatabind.rlContainer.setOnClickListener {
             LoginActivity.start(this@SplashActivity)
             finish()
