@@ -1,15 +1,19 @@
 package com.hhf.project.ext
 
+import android.annotation.SuppressLint
 import android.app.AlertDialog
-import android.app.DatePickerDialog
 import android.content.Context
 import android.text.TextUtils
+import android.view.View
 import com.blankj.utilcode.util.SPUtils
 import com.hhf.project.bean.StatusListBean
 import com.hhf.project.constant.GlobalConstants
 import com.hhf.project.widght.CommonTableView
+import com.lxj.xpopup.XPopup
+import com.lxj.xpopupext.listener.TimePickerListener
 import java.text.SimpleDateFormat
 import java.util.*
+
 
 /**
  *  @date 2021/10/18
@@ -20,33 +24,25 @@ import java.util.*
 val genderArray = arrayOf("Male", "Female")
 
 fun selectDate(context: Context, commonView: CommonTableView) {
-    val calendar: Calendar = Calendar.getInstance() //获取日期格式器对象
+  val custom=  com.hhf.project.widght.TimePickerPopup(context)
+        //                        .setDefaultDate(date)  //设置默认选中日期
+        //                        .setYearRange(1990, 1999) //设置年份范围
+        //                        .setDateRange(date, date2) //设置日期范围
+        .setTimePickerListener(object : TimePickerListener {
+            override fun onTimeChanged(date: Date?) {
+                //时间改变
+            }
 
-    val datePickerDialog = DatePickerDialog(
-        context, { _, p1, p2, p3 ->
-            val mouth=p2+1
-            commonView.setText(
-                "${
-                    if (mouth >= 10) {
-                        mouth.toString()
-                    } else {
-                        "0".plus(mouth)
-                    }
-                }/${
-                    if (p3 >= 10) {
-                        p3.toString()
-                    } else {
-                        "0".plus(p3)
-                    }
+            @SuppressLint("SimpleDateFormat")
+            override fun onTimeConfirm(date: Date, view: View?) {
+                val simpleDateFormat = SimpleDateFormat("MM/dd/yyyy").format(date)
+                commonView.setText(simpleDateFormat)
+            }
+        }).setShowLabel(false)
 
-                }/$p1"
-            )
-        },
-        calendar.get(Calendar.YEAR),
-        calendar.get(Calendar.MONTH),
-        calendar.get(Calendar.DAY_OF_MONTH)
-    )
-    datePickerDialog.show()
+    val xpopup=XPopup.Builder(context)
+        .asCustom(custom)
+    xpopup .show()
 }
 
 fun selectGender(context: Context, commonView: CommonTableView) {

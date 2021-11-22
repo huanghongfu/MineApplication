@@ -67,7 +67,6 @@ android {
 dependencies {
 
     api project(path: ':libBase')
-
 }
 
 

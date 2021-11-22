@@ -13,8 +13,9 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:paddingEnd="20dp"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:paddingEnd="20dp">
+
             <ImageView
                 android:id="@+id/iv_back"
                 android:layout_width="wrap_content"
@@ -24,24 +25,24 @@
 
             <TextView
                 android:layout_width="wrap_content"
-                android:text="BASIC INFORMATION"
-                android:textSize="18sp"
+                android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
                 android:padding="5dp"
-                android:textStyle="bold"
+                android:text="BASIC INFORMATION"
                 android:textColor="@color/colorBlack333"
-                android:layout_height="wrap_content"/>
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
             <TextView
-                android:layout_width="wrap_content"
-                android:text="ENTER REGISTRATION CODE"
-                android:layout_alignParentEnd="true"
-                android:textSize="18sp"
                 android:id="@+id/tv_input_dialog"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
                 android:layout_centerVertical="true"
                 android:padding="5dp"
+                android:text="ENTER REGISTRATION CODE"
                 android:textColor="@color/colorBlack333"
-                android:layout_height="wrap_content"/>
+                android:textSize="18sp" />
         </RelativeLayout>
 
 
@@ -52,20 +53,20 @@
             android:orientation="horizontal">
 
             <com.hhf.project.widght.CommonTableView
+                android:id="@+id/common_view_last_name"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 app:common_editable="true"
-                android:id="@+id/common_view_last_name"
                 app:common_show_must="true"
                 app:common_title_hint="LAST NAME" />
 
             <com.hhf.project.widght.CommonTableView
+                android:id="@+id/common_view_first_name"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 app:common_editable="true"
-                android:id="@+id/common_view_first_name"
                 app:common_show_must="true"
                 app:common_title_hint="FIRST NAME" />
         </LinearLayout>
@@ -78,21 +79,21 @@
             android:orientation="horizontal">
 
             <com.hhf.project.widght.CommonTableView
+                android:id="@+id/common_view_gender"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 app:common_editable="false"
                 app:common_right_icon="@drawable/icon_arrow_right"
                 app:common_show_must="true"
-                android:id="@+id/common_view_gender"
                 app:common_title_hint="GENDER" />
 
             <com.hhf.project.widght.CommonTableView
+                android:id="@+id/common_view_dob"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 app:common_editable="false"
-                android:id="@+id/common_view_dob"
                 app:common_right_icon="@drawable/icon_calendar"
                 app:common_show_must="true"
                 app:common_title_hint="DOB" />
@@ -104,12 +105,12 @@
             android:layout_weight="1" />
 
         <TextView
+            android:id="@+id/tv_go_login"
             android:layout_width="match_parent"
             android:layout_height="78dp"
             android:background="#5368FF"
             android:gravity="center"
             android:text="CHECK IN"
-            android:id="@+id/tv_go_login"
             android:textColor="#ffffffff"
             android:textSize="18sp" />
 

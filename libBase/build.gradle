@@ -57,6 +57,9 @@ dependencies {
     api "com.github.franmontiel:PersistentCookieJar:v1.0.1"
     //动态替换BaseUrl库 使用可参考 https://github.com/JessYanCoding/RetrofitUrlManager
     api 'me.jessyan:retrofit-url-manager:1.4.0'
+    api 'com.github.li-xiaojun:XPopupExt:0.0.8'
+//由于扩展库依赖XPopup才能正常使用，所以还必须添加XPopup依赖
+    api 'com.github.li-xiaojun:XPopup:2.2.25'
     api project(':libRes')
 }
 
