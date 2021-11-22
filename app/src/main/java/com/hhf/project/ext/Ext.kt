@@ -33,6 +33,7 @@ fun selectDate(context: Context, commonView: CommonTableView) {
                 //时间改变
             }
 
+
             @SuppressLint("SimpleDateFormat")
             override fun onTimeConfirm(date: Date, view: View?) {
                 val simpleDateFormat = SimpleDateFormat("MM/dd/yyyy").format(date)
