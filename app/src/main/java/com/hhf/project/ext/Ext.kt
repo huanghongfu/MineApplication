@@ -24,7 +24,7 @@ import java.util.*
 val genderArray = arrayOf("Male", "Female")
 
 fun selectDate(context: Context, commonView: CommonTableView) {
-  val custom=  com.hhf.project.widght.TimePickerPopup(context)
+    val custom = com.hhf.project.widght.TimePickerPopup(context)
         //                        .setDefaultDate(date)  //设置默认选中日期
         //                        .setYearRange(1990, 1999) //设置年份范围
         //                        .setDateRange(date, date2) //设置日期范围
@@ -33,7 +33,6 @@ fun selectDate(context: Context, commonView: CommonTableView) {
                 //时间改变
             }
 
-
             @SuppressLint("SimpleDateFormat")
             override fun onTimeConfirm(date: Date, view: View?) {
                 val simpleDateFormat = SimpleDateFormat("MM/dd/yyyy").format(date)
@@ -41,9 +40,9 @@ fun selectDate(context: Context, commonView: CommonTableView) {
             }
         }).setShowLabel(false)
 
-    val xpopup=XPopup.Builder(context)
+    XPopup.Builder(context)
         .asCustom(custom)
-    xpopup .show()
+        .show()
 }
 
 fun selectGender(context: Context, commonView: CommonTableView) {
