@@ -1,6 +1,8 @@
 package com.hhf.project.ui
 
+import android.app.AlertDialog
 import android.content.Context
+import android.content.DialogInterface
 import android.content.Intent
 import android.os.Bundle
 import android.text.TextUtils
@@ -8,6 +10,7 @@ import android.view.View
 import androidx.core.view.isVisible
 import androidx.lifecycle.Observer
 import com.aigestudio.wheelpicker.WheelPicker
+import com.blankj.utilcode.util.ActivityUtils
 import com.blankj.utilcode.util.ToastUtils
 import com.chad.library.adapter.base.BaseQuickAdapter
 import com.hhf.project.R
@@ -46,6 +49,15 @@ class DoctorSelectActivity : BaseActivity<RegisterUserViewModel, ActivityDoctorS
                 if(it.isSuccess()){
                     if(TextUtils.equals(it.getErrorCode(),"NO_DOCTOR")){
                         ToastUtils.showShort(it.getResponseMsg())
+                    }else if(TextUtils.equals(it.getErrorCode(),"FINISH")){
+                        AlertDialog.Builder(this)
+                            .setTitle(it.getResponseMsg())
+                            .setPositiveButton("Sure"
+                            ) { _, _ ->
+                                LoginActivity.start(this)
+                                finish()
+                            }
+                            .show()
                     }else{
                         mAdapter.setNewInstance(it.result)
                     }

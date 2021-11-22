@@ -43,7 +43,7 @@
                 android:textSize="20sp"
                 android:layout_marginEnd="18dp"
                 android:id="@+id/tv_finish"
-                android:visibility="gone"
+                android:visibility="visible"
                 android:layout_centerVertical="true"
                 android:textColor="@color/colorBlack333"
                 android:layout_alignParentEnd="true"
