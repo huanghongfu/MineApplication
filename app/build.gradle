@@ -54,9 +54,9 @@ android {
 
         release {
             signingConfigs.release
-            minifyEnabled true//开启混淆
-            shrinkResources true
-            zipAlignEnabled true//去除无用资源
+            minifyEnabled false//开启混淆
+            shrinkResources false
+            zipAlignEnabled false//去除无用资源
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
