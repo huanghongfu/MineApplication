@@ -94,7 +94,7 @@
                 android:id="@+id/common_view_ssn"
                 app:common_editable="true"
                 app:common_show_must="false"
-                app:common_title_hint="SNN" />
+                app:common_title_hint="SSN" />
         </LinearLayout>
 
         <LinearLayout

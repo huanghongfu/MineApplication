@@ -68,7 +68,7 @@ open abstract class BaseActivity<VM : BaseViewModel, DB : ViewDataBinding> :
                 if (ActivityUtils.getTopActivity().localClassName.contains("SplashActivity")) {
                     return
                 }
-                if (App.stayTime >= 0 && ActivityUtils.getTopActivity() == mContext) {
+                if (App.stayTime > 0 && ActivityUtils.getTopActivity() == mContext) {
                     Log.e("adsjda", "mNoTouchTime=$mNoTouchTime")
                     mNoTouchTime++
                     if (mNoTouchTime >= App.stayTime) {
