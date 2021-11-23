@@ -28,6 +28,7 @@ import me.hgj.jetpackmvvm.ext.view.clickNoRepeat
 class LoginActivity : BaseActivity<LoginViewModel, ActivityLoginBinding>() {
 
     companion object{
+
         @JvmStatic
         fun start(context: Context) {
             val starter = Intent(context, LoginActivity::class.java)
