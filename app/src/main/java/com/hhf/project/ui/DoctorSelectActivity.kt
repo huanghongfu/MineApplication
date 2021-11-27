@@ -48,7 +48,7 @@ class DoctorSelectActivity : BaseActivity<RegisterUserViewModel, ActivityDoctorS
             parseState(it, {
                 if(it.isSuccess()){
                     if(TextUtils.equals(it.getErrorCode(),"NO_DOCTOR")){
-                        ToastUtils.showShort(it.getResponseMsg())
+                        ToastUtils.showLong(it.getResponseMsg())
                     }else if(TextUtils.equals(it.getErrorCode(),"FINISH")){
                         AlertDialog.Builder(this)
                             .setTitle(it.getResponseMsg())

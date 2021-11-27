@@ -57,4 +57,10 @@ class LoginViewModel : BaseViewModel() {
             apiService.inputClient(clinicId)
         }, inputLiveData)
     }
+
+    fun getRuleList() {
+//        request({
+//            apiService.inputClient(clinicId)
+//        }, inputLiveData)
+    }
 }
