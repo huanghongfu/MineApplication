@@ -56,6 +56,7 @@ class LoginViewModel : BaseViewModel() {
         request({
 
 
+
             apiService.inputClient(clinicId)
         }, inputLiveData)
     }
