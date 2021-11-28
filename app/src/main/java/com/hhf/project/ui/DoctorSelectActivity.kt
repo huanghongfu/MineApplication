@@ -54,7 +54,7 @@ class DoctorSelectActivity : BaseActivity<RegisterUserViewModel, ActivityDoctorS
                             .setTitle(it.getResponseMsg())
                             .setPositiveButton("Sure"
                             ) { _, _ ->
-                                LoginActivity.start(this)
+                                RuleActivity.start(this)
                                 finish()
                             }
                             .show()
@@ -80,7 +80,7 @@ class DoctorSelectActivity : BaseActivity<RegisterUserViewModel, ActivityDoctorS
 
         mDatabind.tvFinish.setOnClickListener {
             ToastUtils.showLong("Thank you! Your registration has been completed.")
-            LoginActivity.start(this)
+            RuleActivity.start(this)
             finish()
         }
 

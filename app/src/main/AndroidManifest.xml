@@ -24,6 +24,15 @@
 <!--                <category android:name="android.intent.category.LAUNCHER" />-->
 <!--            </intent-filter>-->
 <!--        </activity>-->
+
+        <activity android:name=".ui.SplashActivity"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
         <activity
             android:name=".ui.MainActivity"
             android:launchMode="singleTask"
@@ -35,19 +44,19 @@
 
         </activity>
         <activity
-            android:name=".ui.SplashActivity"
+            android:name=".ui.ScreenProActivity"
             android:theme="@style/FullscreenThemse"
             android:screenOrientation="portrait" >
 
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+
         </activity>
         <activity android:name=".ui.RegisterUserActivity"
             android:screenOrientation="portrait"/>
         <activity android:name=".ui.AddBuilderActivity" />
         <activity android:name=".ui.DoctorSelectActivity" />
+
+        <activity android:name=".ui.RuleActivity"
+            android:screenOrientation="portrait" />
 
         <provider
             android:name="androidx.core.content.FileProvider"

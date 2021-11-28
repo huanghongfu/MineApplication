@@ -38,18 +38,6 @@ class LoginActivity : BaseActivity<LoginViewModel, ActivityLoginBinding>() {
     override fun layoutId() = R.layout.activity_login
 
     override fun initView(savedInstanceState: Bundle?) {
-//        object: CountDownTimer(3000,1000){
-//            override fun onTick(millisUntilFinished: Long) {
-//
-//            }
-//
-//            override fun onFinish() {
-//                SplashActivity.start(this@LoginActivity)
-//                finish()
-//            }
-//
-//        }.start()
-
         mDatabind.commonViewDob.setOnClickListener {
             selectDate(this, mDatabind.commonViewDob)
         }
@@ -71,13 +59,10 @@ class LoginActivity : BaseActivity<LoginViewModel, ActivityLoginBinding>() {
             )
         }
 
-        mDatabind.tvInputDialog.setOnClickListener {
-            InputClientIdDialogFragment.newInstance().show(supportFragmentManager,"")
-        }
+//        mDatabind.tvInputDialog.setOnClickListener {
+//            InputClientIdDialogFragment.newInstance().show(supportFragmentManager,"")
+//        }
 
-        if(TextUtils.isEmpty(SPUtils.getInstance().getString(GlobalConstants.CLIENT_ID))){
-            InputClientIdDialogFragment.newInstance().show(supportFragmentManager,"")
-        }
 
         mDatabind.commonViewGender.setText(genderArray[0])
         mDatabind.commonViewGender.setExtField("0")

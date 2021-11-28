@@ -5,11 +5,11 @@
     android:padding="20dp"
     android:orientation="horizontal">
 
-    <CheckBox
-        android:id="@+id/check_box"
+    <ImageView
         android:layout_width="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:id="@+id/iv_status"
+        android:src="@drawable/selector_rect_status_bg"/>
 
     <TextView
         android:id="@+id/tv_content"

@@ -37,6 +37,7 @@ class ClientIdSureDialogFragment :
     override fun layoutId() = R.layout.dialog_fragment_client_id
 
     override fun initView(savedInstanceState: Bundle?) {
+        isCancelable=false
         val bean = (requireArguments().getSerializable("bean") as InputClientBean)
         bean.apply {
             mDatabind.commonViewName.setText(name)
@@ -56,6 +57,8 @@ class ClientIdSureDialogFragment :
             SPUtils.getInstance()
                 .put(GlobalConstants.CLIENT_ID, requireArguments().getString("clientid"))
             SPUtils.getInstance().put(GlobalConstants.SERVICE_TIME, bean.screenSaverTimer)
+            ScreenProActivity.start(requireContext())
+            requireActivity().finish()
             dismissAllowingStateLoss()
         }
     }

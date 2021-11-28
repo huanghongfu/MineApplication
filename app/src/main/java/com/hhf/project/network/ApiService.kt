@@ -13,9 +13,14 @@ import retrofit2.http.*
 interface ApiService {
 
     companion object {
-        const val SERVER_URL = "https://34.222.19.171/emr/"
+        const val SERVER_URL = "http://eee.nat300.top/revenueManagement/"
         const val SERVER_URL1 = "http://eee.nat300.top/revenueManagement/"
     }
+
+    @FormUrlEncoded
+    @POST("clinicAgreementHead!getClinicAgreementByClinicId.pad")
+    suspend fun getRuleList(@Field("clinicId") clinicId: String): ApiResponse<RuleInitBean>
+
 
     @FormUrlEncoded
     @POST("clinic!checkGetClinicInfo.pad")

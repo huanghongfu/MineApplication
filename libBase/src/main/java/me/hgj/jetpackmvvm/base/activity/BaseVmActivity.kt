@@ -34,8 +34,11 @@ abstract class BaseVmActivity<VM : BaseViewModel> : AppCompatActivity() {
 
     abstract fun dismissLoading()
 
+    protected lateinit var mContext:Context
+
     override fun attachBaseContext(newBase: Context?) {
         super.attachBaseContext(newBase)
+        mContext=this
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
