@@ -1,5 +1,6 @@
 package me.hgj.jetpackmvvm.demo.app.base
 
+import android.app.Activity
 import android.content.Context
 import android.content.res.Resources
 import android.os.Bundle
@@ -68,7 +69,8 @@ open abstract class BaseActivity<VM : BaseViewModel, DB : ViewDataBinding> :
         timer = Timer()
         timer?.schedule(object : TimerTask() {
             override fun run() {
-                if (ActivityUtils.getTopActivity().localClassName.contains("SplashActivity")) {
+                val topActivity: Activity? = ActivityUtils.getTopActivity()
+                if (topActivity == null || topActivity.localClassName.contains("SplashActivity")) {
                     return
                 }
                 if (App.stayTime > 0 && ActivityUtils.getTopActivity() == mContext) {
@@ -123,7 +125,7 @@ open abstract class BaseActivity<VM : BaseViewModel, DB : ViewDataBinding> :
     }
 
     // Return whether touch the view.
-    private  fun isShouldHideKeyboard(v: View?, event: MotionEvent): Boolean {
+    private fun isShouldHideKeyboard(v: View?, event: MotionEvent): Boolean {
         if (v != null && v is EditText) {
             val l = intArrayOf(0, 0)
             v.getLocationInWindow(l)
