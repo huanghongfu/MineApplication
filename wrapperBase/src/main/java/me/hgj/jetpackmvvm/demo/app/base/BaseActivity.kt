@@ -5,6 +5,9 @@ import android.content.res.Resources
 import android.os.Bundle
 import android.util.Log
 import android.view.MotionEvent
+import android.view.View
+import android.view.inputmethod.InputMethodManager
+import android.widget.EditText
 import androidx.databinding.ViewDataBinding
 import com.blankj.utilcode.util.ActivityUtils
 import me.hgj.jetpackmvvm.base.activity.BaseVmDbActivity
@@ -103,6 +106,34 @@ open abstract class BaseActivity<VM : BaseViewModel, DB : ViewDataBinding> :
     override fun onTouchEvent(event: MotionEvent?): Boolean {
         mNoTouchTime = 0
         return super.onTouchEvent(event)
+    }
+
+    override fun dispatchTouchEvent(ev: MotionEvent): Boolean {
+        if (ev.action == MotionEvent.ACTION_DOWN) {
+            val v = currentFocus
+            if (isShouldHideKeyboard(v, ev)) {
+                val imm = getSystemService(INPUT_METHOD_SERVICE) as InputMethodManager
+                imm.hideSoftInputFromWindow(
+                    v!!.windowToken,
+                    InputMethodManager.HIDE_NOT_ALWAYS
+                )
+            }
+        }
+        return super.dispatchTouchEvent(ev)
+    }
+
+    // Return whether touch the view.
+    private  fun isShouldHideKeyboard(v: View?, event: MotionEvent): Boolean {
+        if (v != null && v is EditText) {
+            val l = intArrayOf(0, 0)
+            v.getLocationInWindow(l)
+            val left = l[0]
+            val top = l[1]
+            val bottom = top + v.getHeight()
+            val right = left + v.getWidth()
+            return !(event.x > left && event.x < right && event.y > top && event.y < bottom)
+        }
+        return false
     }
 
     /**
