@@ -66,7 +66,7 @@ class RuleActivity : BaseActivity<LoginViewModel, ActivityRuleBinding>() {
                         spanUtils.setForegroundColor(resources.getColor(R.color.colorAccent)).setClickSpan(object:ClickableSpan(){
                             override fun onClick(p0: View) {
                                 AlertDialog.Builder(mContext)
-                                    .setTitle(it.description)
+                                    .setMessage(it.description)
                                     .setPositiveButton("Sure"
                                     ) { dialog, _ ->
                                         dialog.dismiss()

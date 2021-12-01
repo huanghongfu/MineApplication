@@ -13,7 +13,7 @@ import retrofit2.http.*
 interface ApiService {
 
     companion object {
-        const val SERVER_URL = "https://www.eremanagement.com/emr"
+        const val SERVER_URL = "https://www.eremanagement.com/emr/"
         const val SERVER_URL1 = "http://eee.nat300.top/revenueManagement/"
     }
 
