@@ -14,6 +14,7 @@ interface ApiService {
 
     companion object {
         const val SERVER_URL = "https://www.eremanagement.com/emr/"
+//        const val SERVER_URL = "http://192.168.3.160:9090/revenueManagement/"
         const val SERVER_URL1 = "http://eee.nat300.top/revenueManagement/"
     }
 

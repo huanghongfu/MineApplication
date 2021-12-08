@@ -113,6 +113,7 @@ class RegisterUserViewModel : BaseViewModel() {
     fun getDoctorList() {
         val mutableMapOf = mutableMapOf<String, String>()
         mutableMapOf.wrapperMap()
+        mutableMapOf["appointmentVO.patientId"] = MineApp.userid
         requestNoCheck({ apiService.getDoctorList(mutableMapOf) }, getDoctorListLiveData)
     }
 
