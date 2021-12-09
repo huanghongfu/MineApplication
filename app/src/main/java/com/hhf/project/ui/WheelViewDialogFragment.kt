@@ -34,7 +34,12 @@ class WheelViewDialogFragment :
         const val LEVEL_TYPE = 6
         const val POLICY_HOLDER_TYPE = 7
         const val DOCTOR_SELECT_TYPE = 8
-        fun newInstance(bean: PollDataBean?, type: Int, index: Int,doctorSelect: DoctorInfoBean?=null): WheelViewDialogFragment {
+        fun newInstance(
+            bean: PollDataBean?,
+            type: Int,
+            index: Int,
+            doctorSelect: DoctorInfoBean? = null
+        ): WheelViewDialogFragment {
             val args = Bundle()
             args.putSerializable("bean", bean)
             args.putSerializable("doctorSelect", doctorSelect)
@@ -54,29 +59,55 @@ class WheelViewDialogFragment :
         type = requireArguments().getInt("type")
         index = requireArguments().getInt("index")
         when (type) {
-            TITLE_TYPE -> mDatabind.wheelPicker.data = bean!!.title.list.map {
-                it.name
+            TITLE_TYPE -> {
+                mDatabind.tvTitle.text = "TITLE"
+                mDatabind.wheelPicker.data = bean!!.title.list.map {
+                    it.name
+                }
             }
-            RACE_TYPE -> mDatabind.wheelPicker.data = bean!!.race.list.map {
-                it.name
+
+            RACE_TYPE -> {
+                mDatabind.tvTitle.text = "RACE"
+                mDatabind.wheelPicker.data = bean!!.race.list.map {
+                    it.name
+                }
             }
-            STATUS_TYPE -> mDatabind.wheelPicker.data = bean!!.state.list.map {
-                it.name
+            STATUS_TYPE -> {
+                mDatabind.tvTitle.text = "STATE"
+                mDatabind.wheelPicker.data = bean!!.state.list.map {
+                    it.name
+                }
             }
-            MARTIAL_TYPE -> mDatabind.wheelPicker.data = bean!!.martial.list.map {
-                it.name
+            MARTIAL_TYPE -> {
+                mDatabind.tvTitle.text = "MARITAL STATUS"
+                mDatabind.wheelPicker.data = bean!!.martial.list.map {
+                    it.name
+                }
             }
-            LEVEL_TYPE -> mDatabind.wheelPicker.data = getLevelList().map {
-                it.name
+            LEVEL_TYPE -> {
+                mDatabind.tvTitle.text = "LEVEL"
+                mDatabind.wheelPicker.data = getLevelList().map {
+                    it.name
+                }
             }
-            PAY_CLASS_TYPE -> mDatabind.wheelPicker.data = getPayClassList().map {
-                it.name
+            PAY_CLASS_TYPE -> {
+                mDatabind.tvTitle.text = "PAYER CLASS"
+                mDatabind.wheelPicker.data = getPayClassList().map {
+                    it.name
+                }
             }
-            POLICY_HOLDER_TYPE -> mDatabind.wheelPicker.data = getPolicyHolderList().map {
-                it.name
+            POLICY_HOLDER_TYPE -> {
+                mDatabind.tvTitle.text = "POLICY HOLDER"
+                mDatabind.wheelPicker.data = getPolicyHolderList().map {
+                    it.name
+                }
             }
-            DOCTOR_SELECT_TYPE -> mDatabind.wheelPicker.data = doctorInfoBean!!.canAppointmentTime.map {
-                it.time
+            DOCTOR_SELECT_TYPE -> {
+                mDatabind.tvTitle.text = "TIME"
+                mDatabind.wheelPicker.data =
+                    doctorInfoBean!!.canAppointmentTime.map {
+                        it.time
+                    }
             }
         }
         mDatabind.wheelPicker.setSelectedItemPosition(index, false)

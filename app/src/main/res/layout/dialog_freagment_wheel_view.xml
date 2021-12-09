@@ -12,7 +12,7 @@
         android:background="@color/white"
         android:orientation="vertical">
 
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
@@ -27,11 +27,13 @@
                 android:textSize="18sp" />
 
             <TextView
-                android:layout_width="0dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:gravity="center"
-                android:textColor="#ff000000"
+                android:id="@+id/tv_title"
+                android:layout_centerInParent="true"
+                android:textStyle="bold"
+                android:textColor="#ff1789fc"
                 android:textSize="18sp" />
 
             <TextView
@@ -39,11 +41,12 @@
                 android:layout_height="wrap_content"
                 android:text="@string/string_complete"
                 android:padding="16dp"
+                android:layout_alignParentEnd="true"
                 android:id="@+id/tv_complete"
                 android:textColor="#ff1789fc"
                 android:textSize="18sp" />
 
-        </LinearLayout>
+        </RelativeLayout>
 
         <com.aigestudio.wheelpicker.WheelPicker
             android:id="@+id/wheel_picker"

@@ -4,7 +4,7 @@
     android:layout_height="wrap_content"
     android:orientation="vertical">
 
-    <LinearLayout
+    <RelativeLayout
         android:orientation="horizontal"
         android:paddingTop="15dp"
         android:paddingBottom="15dp"
@@ -18,28 +18,34 @@
             android:gravity="center"
             android:paddingLeft="15dp"
             android:paddingRight="10dp"
-            android:text="Cancel"
+            android:text="CANCEL"
             android:textAllCaps="false"
-            android:textColor="@color/_xpopup_dark_color"
+            android:textColor="#ff1789fc"
             android:textSize="18sp" />
 
-        <Space
-            android:layout_weight="1"
-            android:layout_width="0dp"
-            android:layout_height="0dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:text="DATE"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:textColor="#ff1789fc"
+            android:layout_height="wrap_content"/>
 
         <TextView
             android:id="@+id/btnConfirm"
             android:gravity="center"
             android:paddingLeft="10dp"
+            android:layout_alignParentEnd="true"
             android:paddingRight="15dp"
-            android:textColor="@color/_xpopup_dark_color"
+            android:textColor="#ff1789fc"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Sure"
+            android:text="OK"
             android:textAllCaps="false"
             android:textSize="18sp" />
-    </LinearLayout>
+    </RelativeLayout>
 
 
     <LinearLayout

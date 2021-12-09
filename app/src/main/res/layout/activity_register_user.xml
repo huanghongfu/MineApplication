@@ -46,7 +46,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="22dp"
                     android:drawableStart="@drawable/icon_must_input"
-                    android:text="Indicates a required field. "
+                    android:text="Please fill in the following information to register for an appointment. "
                     android:textColor="#ff000000"
                     android:drawablePadding="5dp"
                     android:textSize="18sp" />
